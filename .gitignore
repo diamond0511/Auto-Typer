@@ -1,0 +1,23 @@
+# Build output. build.ps1 recreates dist\AutoTyper.exe from src.
+dist/
+*.pdb
+obj/
+bin/
+
+# Written by the app itself at run time and holds whatever hotkeys and timings
+# this particular machine uses. Keeping it out of the repo means a clone never
+# overwrites someone else's settings.
+autotyper.ini
+
+# Raw keystroke captures from the rhythm tracker. Each file is a full timing log
+# for a named participant, so these stay local. The profile the app actually
+# uses is baked into src\RhythmProfile.cs, not read from any of them.
+tools/rhythm-*-20*.json
+
+# Unrelated documents that live in this folder but are not part of the project.
+*.pdf
+
+# Scratch
+*.log
+*.tmp
+*.bak
