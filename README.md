@@ -13,6 +13,20 @@ driven entirely by global hotkeys.
 
 ---
 
+## Download
+
+**[AutoTyper.exe](https://github.com/diamond0511/Auto-Typer/releases/latest/download/AutoTyper.exe)**
+from the latest release. One file, no installer, no DLLs, nothing written to the registry. Put it
+wherever you like, including a USB stick: it keeps its settings in `autotyper.ini` beside itself.
+
+Windows needs .NET Framework 4.x, which ships with Windows 10 and 11.
+
+SmartScreen will warn on first run, because the exe is not code signed. Choose More info, then Run
+anyway, or build it yourself from source with the step below and trust nothing but your own
+compiler.
+
+---
+
 ## Quick start
 
 ```powershell
@@ -396,11 +410,18 @@ src/
   AppSettings.cs       load/save
   Hotkey.cs            hotkey model and parsing
   NativeMethods.cs     Win32 interop
+  AssemblyInfo.cs      version and product name stamped into the exe
   app.manifest         DPI awareness, asInvoker
 tools/
   rhythm-tracker.html  records how real people type, for fitting the rhythm model
   analyze-rhythm.ps1   pools the recordings into measured distributions
   rhythm-profile.json  the fitted profile, written by the analyzer
 dist/
-  AutoTyper.exe        build output
+  AutoTyper.exe        build output, not tracked in git
 ```
+
+---
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).
